@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymTracker Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside>
+        <h1>Gym<span>Tracker</span></h1>
+        <button class="btn-new-routine" onclick="criarRotina()">
+            <i class="fas fa-plus"></i> Nova Rotina
+        </button>
+        <ul class="routine-list" id="listaRotinas"></ul>
+
+        <div class="backup-section">
+            <button class="btn-backup" onclick="backupData()">
+                <i class="fas fa-download"></i> Backup dos Dados
+            </button>
+            <button class="btn-backup" onclick="document.getElementById('restoreInput').click()">
+                <i class="fas fa-upload"></i> Restaurar Dados
+            </button>
+            <input type="file" id="restoreInput" style="display: none;" onchange="restoreData(event)">
+        </div>
+    </aside>
+
+    <main id="mainContent">
+        <div class="empty-state">
+            <i class="fas fa-dumbbell" style="font-size: 4rem; margin-bottom: 20px; opacity: 0.2;"></i>
+            <h2>Selecione ou crie um treino</h2>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modalExercicio">
+        <div class="modal-content">
+            <button class="close-modal" onclick="fecharModal()">&times;</button>
+            <h2 id="modalTitle" style="margin-bottom: 25px; font-size: 1.8rem;">Exercicio</h2>
+            
+            <div class="log-form">
+                <div style="margin-bottom: 20px;">
+                    <label style="color: var(--text-sec); font-size: 0.9rem; display: block; margin-bottom: 8px;">Data do Treino</label>
+                    <input type="date" id="inputData">
+                </div>
+
+                <div class="sets-header">
+                    <span>Set</span>
+                    <span>Carga (kg)</span>
+                    <span>Repetições</span>
+                    <span></span>
+                </div>
+
+                <div id="setsContainer" class="sets-container"></div>
+
+                <button class="btn-add-set" onclick="adicionarSerieVazia()">
+                    <i class="fas fa-plus"></i> Adicionar Série
+                </button>
+
+                <button class="btn-save" onclick="salvarLog()">Salvar Treino</button>
+            </div>
+
+            <div class="chart-controls">
+                <h3 id="tituloGrafico" style="font-size: 1rem; color: var(--text-sec); font-weight: 600;"></h3>
+                <button id="btnToggleChart" class="btn-toggle" onclick="alternarModoGrafico()">
+                    <i class="fas fa-exchange-alt"></i> Ver Volume Total
+                </button>
+            </div>
+
+            <canvas id="graficoEvolucao"></canvas>
+
+            <button class="btn-clear-history" onclick="limparHistorico()">
+                
+                <i class="fas fa-eraser"></i> Limpar histórico deste exercício
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

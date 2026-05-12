@@ -27,4 +27,3 @@ Este projeto não requer instalação de pacotes ou servidores complexos.
 1. Faça o clone ou o download deste repositório.
 2. Abra o arquivo `index.html` no seu navegador web preferido.
 3. Comece a registrar seus treinos!
-
