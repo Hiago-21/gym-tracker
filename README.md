@@ -27,23 +27,3 @@ Este projeto não requer instalação de pacotes ou servidores complexos.
 1. Faça o clone ou o download deste repositório.
 2. Abra o arquivo `index.html` no seu navegador web preferido.
 3. Comece a registrar seus treinos!
-
-### 📸 Demonstração
-
-<div align="center">
-  <table>
-    <tr>
-      <td colspan="2" align="center">
-        <img src="img/Anotações_de_Exercício.png" alt="Painel Geral de Exercícios" width="100%">
-      </td>
-    </tr>
-    <tr>
-      <td align="center" width="50%">
-        <img src="img/Carga_e_Séries.png" alt="Formulário de Carga e Séries" width="100%">
-      </td>
-      <td align="center" width="50%">
-        <img src="img/Gráfico_Volume.png" alt="Gráfico de Progressão de Volume" width="100%">
-      </td>
-    </tr>
-  </table>
-</div>
